@@ -1,6 +1,8 @@
-/* Create game object according to Red Green Refactor process */
+/* Create game object according to Red Green Refactor process 
+(add just enough code to get the test to pass) */
 let game = {
-    score: 0
+    score: 0,
+    currentGame: []
 };
 
 /* Export the game object 

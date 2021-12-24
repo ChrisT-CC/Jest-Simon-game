@@ -24,9 +24,15 @@ beforeAll(() => {
     document.close();
 })
 
-/* Create our first failing test, to check if the score key exists */
 describe("game object contains correct keys", () => {
+    /* Create our first failing test, to check if the score key exists */
     test("score key exists", () => {
         expect("score" in game).toBe(true);
+    });
+    /* Add a second failing test. 
+    This time we'll check for the existence of the currentGame key, 
+    which will hold the sequence of computer moves */
+    test("currentGame key exists", () => {
+        expect("currentGame" in game).toBe(true);
     });
 })
