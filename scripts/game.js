@@ -3,7 +3,8 @@
 let game = {
     score: 0,
     currentGame: [],
-    playerMoves: []
+    playerMoves: [],
+    choices: []
 };
 
 /* Export the game object 

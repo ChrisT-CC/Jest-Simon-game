@@ -35,10 +35,16 @@ describe("game object contains correct keys", () => {
     test("currentGame key exists", () => {
         expect("currentGame" in game).toBe(true);
     });
-    /* Add a second failing test. 
+    /* Add a third failing test. 
     This time we'll check for the existence of the playerMoves key, 
-    which will hold the sequence of computer moves */
+    which will hold the sequence of the turns that the player has taken */
     test("playerMoves key exists", () => {
         expect("playerMoves" in game).toBe(true);
+    });
+    /* Add a forth failing test. 
+    This time we'll check for the existence of the choices key, 
+    which will hold the available ID's for the circles */
+    test("choices key exists", () => {
+        expect("choices" in game).toBe(true);
     });
 })
