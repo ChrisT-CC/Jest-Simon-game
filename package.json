@@ -1,0 +1,22 @@
+{
+  "name": "jest-simon-game",
+  "version": "1.0.0",
+  "description": "This is a JS memory game, based on the [electronic Simon game](https://en.wikipedia.org/wiki/Simon_(game)) from  the 1980s.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisT-CC/Jest-Simon-game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisT-CC/Jest-Simon-game/issues"
+  },
+  "homepage": "https://github.com/ChrisT-CC/Jest-Simon-game#readme",
+  "devDependencies": {
+    "jest": "^27.4.5"
+  }
+}
