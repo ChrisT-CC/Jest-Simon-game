@@ -7,7 +7,7 @@ used when building a web app)
 By adding a @jest-environment docblock at the top of the file 
 */
 
-// Load the entire HTML page and attach it to the mock DOM
+/* Load the entire HTML page and attach it to the mock DOM */
 beforeAll(() => {
     /* Install Node's fs library (a file system handling module built into Node.js 
     that allows us to open, read and write files) */
@@ -19,4 +19,11 @@ beforeAll(() => {
     document.open();
     document.write(fileContents);
     document.close();
+})
+
+/* Create our first failing test, to check if the score key exists */
+describe("game object contains correct keys", () => {
+    test("score key exists", () => {
+        expect("score" in game).toBe(true);
+    });
 })
