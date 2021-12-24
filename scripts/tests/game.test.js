@@ -7,6 +7,9 @@ used when building a web app)
 By adding a @jest-environment docblock at the top of the file 
 */
 
+/* import the game object that we're testing from the game.js file */
+const { game } = require("../game");
+
 /* Load the entire HTML page and attach it to the mock DOM */
 beforeAll(() => {
     /* Install Node's fs library (a file system handling module built into Node.js 
