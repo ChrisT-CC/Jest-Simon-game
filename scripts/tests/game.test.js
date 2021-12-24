@@ -35,4 +35,10 @@ describe("game object contains correct keys", () => {
     test("currentGame key exists", () => {
         expect("currentGame" in game).toBe(true);
     });
+    /* Add a second failing test. 
+    This time we'll check for the existence of the playerMoves key, 
+    which will hold the sequence of computer moves */
+    test("playerMoves key exists", () => {
+        expect("playerMoves" in game).toBe(true);
+    });
 })

@@ -2,7 +2,8 @@
 (add just enough code to get the test to pass) */
 let game = {
     score: 0,
-    currentGame: []
+    currentGame: [],
+    playerMoves: []
 };
 
 /* Export the game object 
