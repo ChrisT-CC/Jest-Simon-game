@@ -62,6 +62,7 @@ describe("newGame works correctly", () => {
     beforeAll(() => {
         game.score = 42;
         game.currentGame = [1, 2, 3, 4];
+        game.playerMoves = [1, 2, 3, 4];
         newGame();
     });
     /* Test to see if the score has been reset */
@@ -71,5 +72,9 @@ describe("newGame works correctly", () => {
     /* Test to see if the currentGame has been reset */
     test("should set currentGame score to zero", () => {
         expect(game.currentGame).toEqual([]);
+    });
+    /* Test to see if the playerMoves has been reset */
+    test("should set playerMoves score to zero", () => {
+        expect(game.playerMoves).toEqual([]);
     });
 });

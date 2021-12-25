@@ -11,6 +11,7 @@ let game = {
 function newGame() {
     game.score = 0;
     game.currentGame = [];
+    game.playerMoves = [];
 }
 
 /* Export the game object 
