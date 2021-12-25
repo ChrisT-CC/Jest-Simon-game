@@ -12,9 +12,15 @@ function newGame() {
     game.score = 0;
     game.currentGame = [];
     game.playerMoves = [];
+    showScore();
 }
 
-/* Export the game object 
-We are using curly brakets because we'll be exporting more than one object 
-and function from this file*/
-module.exports = { game, newGame };
+/* define showScore function with just enough code to get the test to pass and nothing else */
+function showScore() {
+    document.getElementById("score").innerText = game.score;
+}
+
+/* We are using curly brakets because we'll be exporting more than one object 
+and function from this file.
+Export the game object and the functions newGame, showScore */
+module.exports = { game, newGame, showScore };

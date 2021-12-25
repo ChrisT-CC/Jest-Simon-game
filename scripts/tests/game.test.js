@@ -8,7 +8,7 @@ By adding a @jest-environment docblock at the top of the file
 */
 
 /* import the game object, newGame that we're testing from the game.js file */
-const { game, newGame } = require("../game");
+const { game, newGame, showScore } = require("../game");
 
 /* Load the entire HTML page and attach it to the mock DOM */
 beforeAll(() => {
@@ -63,6 +63,9 @@ describe("newGame works correctly", () => {
         game.score = 42;
         game.currentGame = [1, 2, 3, 4];
         game.playerMoves = [1, 2, 3, 4];
+        /* Set the score on the DOM to 42, so that we can see if it gets 
+        reset to zero by newGame */
+        document.getElementById("score").innerText = "42";
         newGame();
     });
     /* Test to see if the score has been reset */
@@ -76,5 +79,9 @@ describe("newGame works correctly", () => {
     /* Test to see if the playerMoves has been reset */
     test("should set playerMoves score to zero", () => {
         expect(game.playerMoves).toEqual([]);
+    });
+    /* Test to see if the score has been reset to zero on the DOM */
+    test("should display 0 for the element with id of score", () => {
+        expect(document.getElementById("score").innerText).toEqual(0);
     });
 });
