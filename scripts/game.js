@@ -10,6 +10,7 @@ let game = {
 /* define newGame function with just enough code to get the test to pass and nothing else */
 function newGame() {
     game.score = 0;
+    game.currentGame = [];
 }
 
 /* Export the game object 
