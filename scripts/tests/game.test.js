@@ -7,8 +7,8 @@ used when building a web app)
 By adding a @jest-environment docblock at the top of the file 
 */
 
-/* import the game object that we're testing from the game.js file */
-const { game } = require("../game");
+/* import the game object, newGame that we're testing from the game.js file */
+const { game, newGame } = require("../game");
 
 /* Load the entire HTML page and attach it to the mock DOM */
 beforeAll(() => {
@@ -22,8 +22,9 @@ beforeAll(() => {
     document.open();
     document.write(fileContents);
     document.close();
-})
+});
 
+/* Test the game object */
 describe("game object contains correct keys", () => {
     /* Create our first failing test, to check if the score key exists */
     test("score key exists", () => {
@@ -52,4 +53,18 @@ describe("game object contains correct keys", () => {
     test("choices contain the correct ids", () => {
         expect(game.choices).toEqual(["button1", "button2", "button3", "button4"]);
     });
-})
+});
+
+/* Test the newGame function */
+describe("newGame works correctly", () => {
+    /* Set up the game state with some fake values to see if the new game function 
+    resets them */
+    beforeAll(() => {
+        game.score = 42;
+        newGame();
+    });
+    /* Test to see if the score has been reset */
+    test("should set game score to zero", () => {
+        expect(game.score).toEqual(0);
+    });
+});

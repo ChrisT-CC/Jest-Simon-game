@@ -7,7 +7,12 @@ let game = {
     choices: ["button1", "button2", "button3", "button4"]
 };
 
+/* define newGame function with just enough code to get the test to pass and nothing else */
+function newGame() {
+    game.score = 0;
+}
+
 /* Export the game object 
 We are using curly brakets because we'll be exporting more than one object 
 and function from this file*/
-module.exports = { game };
+module.exports = { game, newGame };
