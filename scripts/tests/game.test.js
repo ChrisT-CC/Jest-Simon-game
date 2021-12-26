@@ -7,8 +7,8 @@ used when building a web app)
 By adding a @jest-environment docblock at the top of the file 
 */
 
-/* import the game object, newGame that we're testing from the game.js file */
-const { game, newGame, showScore } = require("../game");
+/* import the game object and the functions newGame, addTurn that we're testing from the game.js file */
+const { game, newGame, showScore, addTurn } = require("../game");
 
 /* Load the entire HTML page and attach it to the mock DOM */
 beforeAll(() => {
@@ -73,12 +73,16 @@ describe("newGame works correctly", () => {
         expect(game.score).toEqual(0);
     });
     /* Test to see if the currentGame has been reset */
-    test("should set currentGame score to zero", () => {
-        expect(game.currentGame).toEqual([]);
+    /* test("should clear the computer sequence array", () => {
+        expect(game.currentGame.length).toBe(0);
+    }); */
+    /* Modify previous test to check if currentGame contains one element */
+    test("should be one move in the computer's game array", () => {
+        expect(game.currentGame.length).toBe(1);
     });
     /* Test to see if the playerMoves has been reset */
-    test("should set playerMoves score to zero", () => {
-        expect(game.playerMoves).toEqual([]);
+    test("should clear the player moves array", () => {
+        expect(game.playerMoves.length).toBe(0);
     });
     /* Test to see if the score has been reset to zero on the DOM */
     test("should display 0 for the element with id of score", () => {

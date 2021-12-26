@@ -13,6 +13,17 @@ function newGame() {
     game.currentGame = [];
     game.playerMoves = [];
     showScore();
+    addTurn();
+}
+
+/* define addTurn function with just enough code to get the test to pass and nothing else */
+function addTurn() {
+    /* Clear the playerMoves array because this is the start of a new game */
+    game.playerMoves = [];
+    /* Randomly select one of the available choices, from our game.choices key 
+    and push that into the computer sequence array */
+    game.currentGame.push(game.choices[(Math.floor(Math.random() * 4))]);
+    // showTurns();
 }
 
 /* define showScore function with just enough code to get the test to pass and nothing else */
@@ -23,4 +34,4 @@ function showScore() {
 /* We are using curly brakets because we'll be exporting more than one object 
 and function from this file.
 Export the game object and the functions newGame, showScore */
-module.exports = { game, newGame, showScore };
+module.exports = { game, newGame, showScore, addTurn };
