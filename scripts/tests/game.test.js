@@ -89,3 +89,26 @@ describe("newGame works correctly", () => {
         expect(document.getElementById("score").innerText).toEqual(0);
     });
 });
+
+/* Test the gameplay */
+describe("gameplay works correctly", () => {
+    /*  Reset the game state each time before each test is run */
+    beforeEach(() => {
+        game.score = 0;
+        game.currentGame = [];
+        game.playerMoves = [];
+        addTurn();
+    });
+    /* Reset the game state again after each test */
+    afterEach(() => {
+        game.score = 0;
+        game.currentGame = [];
+        game.playerMoves = [];
+    });
+    /* Test if addTurn function works correctly, by creating a test 
+    to call addTurn again and check to see that there are now 2 elements */
+    test("addTurn adds a new turn to the game", () => {
+        addTurn();
+        expect(game.currentGame.length).toBe(2);
+    })
+});
