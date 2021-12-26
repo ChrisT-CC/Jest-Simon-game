@@ -31,7 +31,15 @@ function showScore() {
     document.getElementById("score").innerText = game.score;
 }
 
+/* define lightOn function with just enough code to get the test to pass and nothing else */
+function lightsOn(circ) {
+    document.getElementById(circ).classList.add("light");
+    setTimeout(() => {
+        document.getElementById(circ).classList.remove("light");
+    }, 400);
+}
+
 /* We are using curly brakets because we'll be exporting more than one object 
 and function from this file.
 Export the game object and the functions newGame, showScore */
-module.exports = { game, newGame, showScore, addTurn };
+module.exports = { game, newGame, showScore, addTurn, lightsOn };

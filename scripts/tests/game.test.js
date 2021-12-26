@@ -8,7 +8,7 @@ By adding a @jest-environment docblock at the top of the file
 */
 
 /* import the game object and the functions newGame, addTurn that we're testing from the game.js file */
-const { game, newGame, showScore, addTurn } = require("../game");
+const { game, newGame, showScore, addTurn, lightsOn } = require("../game");
 
 /* Load the entire HTML page and attach it to the mock DOM */
 beforeAll(() => {
@@ -110,5 +110,11 @@ describe("gameplay works correctly", () => {
     test("addTurn adds a new turn to the game", () => {
         addTurn();
         expect(game.currentGame.length).toBe(2);
-    })
+    });
+    /* Test to see if the correct class has been added to our button to light it up */
+    test("should add correct class to light up the buttons", () => {
+        let button = document.getElementById(game.currentGame[0]);
+        lightsOn(game.currentGame[0]);
+        expect(button.classList).toContain("light");
+    });
 });
