@@ -157,4 +157,11 @@ describe("gameplay works correctly", () => {
         showTurns();
         expect(game.turnInProgress).toBe(true);
     });
+    /* Test to see if  the last button value is being set */
+    test("clicking during computer sequence should fail", () => {
+        showTurns();
+        game.lastButton = "";
+        document.getElementById("button2").click();
+        expect(game.lastButton).toEqual("");
+    });
 });

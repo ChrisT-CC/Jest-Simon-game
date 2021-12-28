@@ -20,7 +20,7 @@ function newGame() {
         if (circle.getAttribute("data-listener") !== "true") {
             circle.addEventListener("click", (e) => {
                 /* Only accept a click if the currentGame.length is greater than zero */
-                if (game.currentGame.length > 0) {
+                if (game.currentGame.length > 0 && !game.turnInProgress) {
                     let move = e.target.getAttribute("id");
                     game.lastButton = move;
                     lightsOn(move);
