@@ -81,7 +81,21 @@ function showTurns() {
     }, 800);
 }
 
+/* Define playerTurn function with just enough code to get the test to pass and nothing else */
+/**
+ * Checks if the player's moves matches the moves in the computer sequence
+ */
+function playerTurn() {
+    let i = game.playerMoves.length-1;
+    if (game.currentGame[i] === game.playerMoves[i]) {
+        if (game.currentGame.length == game.playerMoves.length) {
+            game.score++;
+            addTurn();
+        }
+    }
+}
+
 /* Curly brakets are used because more than one component will be exported.
 Export the game object and the functions newGame, showScore, addTurn, lightsOn, 
-showTurns */
-module.exports = { game, newGame, showScore, addTurn, lightsOn, showTurns };
+showTurns, playerTurn */
+module.exports = { game, newGame, showScore, addTurn, lightsOn, showTurns, playerTurn };

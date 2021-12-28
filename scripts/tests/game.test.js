@@ -8,8 +8,8 @@ By adding a @jest-environment docblock at the top of the file
 */
 
 /* Import the game object and the functions newGame, showScore, addTurn, lightsOn, 
-showTurns that we're testing from the game.js file */
-const { game, newGame, showScore, addTurn, lightsOn, showTurns } = require("../game");
+showTurns, playerTurn that we're testing from the game.js file */
+const { game, newGame, showScore, addTurn, lightsOn, showTurns, playerTurn } = require("../game");
 
 /* Load the entire HTML page and attach it to the mock DOM */
 beforeAll(() => {
@@ -131,10 +131,16 @@ describe("gameplay works correctly", () => {
         lightsOn(game.currentGame[0]);
         expect(button.classList).toContain("light");
     });
-    /*  */
+    /* Test to see if turnNumber is updated */
     test("showTurns should update game.turnNumber", () => {
         game.turnNumber = 42;
         showTurns();
         expect(game.turnNumber).toBe(0);
+    });
+    /* Test to check if the score increments if the move is correct */
+    test("should increment score if the move is correct", () => {
+        game.playerMoves.push(game.currentGame[0]);
+        playerTurn();
+        expect(game.score).toBe(1);
     });
 });
