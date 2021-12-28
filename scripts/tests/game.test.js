@@ -11,6 +11,9 @@ By adding a @jest-environment docblock at the top of the file
 showTurns, playerTurn that we're testing from the game.js file */
 const { game, newGame, showScore, addTurn, lightsOn, showTurns, playerTurn } = require("../game");
 
+/* Set a Jest spy to check if an alert has been raised */
+jest.spyOn(window, "alert").mockImplementation(() => {});
+
 /* Load the entire HTML page and attach it to the mock DOM */
 beforeAll(() => {
     /* Install Node's fs library (a file system handling module built into Node.js 
@@ -142,5 +145,11 @@ describe("gameplay works correctly", () => {
         game.playerMoves.push(game.currentGame[0]);
         playerTurn();
         expect(game.score).toBe(1);
+    });
+    /* Test to see if an alert is raised if the move is wrong */
+    test("should call an alert if the move is worng", () => {
+        game.playerMoves.push("wrong");
+        playerTurn();
+        expect(window.alert).toBeCalledWith("Wrong move!");
     });
 });
