@@ -1,4 +1,9 @@
-# Simon Game
+# [Simon Game](https://christ-cc.github.io/Jest-Simon-game/)
+
+
+![Simon game image](images/simon-memory-game-mockup.jpg)
+
+Visit live website: [Simon Game](https://christ-cc.github.io/Jest-Simon-game/)
 
 This is a JS memory game, based on the [electronic Simon game](https://en.wikipedia.org/wiki/Simon_(game)) from  the 1980s.
 
