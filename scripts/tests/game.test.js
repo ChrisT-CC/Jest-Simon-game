@@ -65,6 +65,10 @@ describe("game object contains correct keys", () => {
     test("lastButton key exists", () => {
         expect("lastButton" in game).toBe(true);
     });
+    /* Test to see if turnInProgress exists in the game object */
+    test("turnInProgress key exists", () => {
+        expect("turnInProgress" in game).toBe(true);
+    });
 });
 
 /* Test the newGame function */
